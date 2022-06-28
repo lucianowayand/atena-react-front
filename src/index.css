@@ -1,0 +1,15 @@
+body{
+  display: flex;
+  justify-content: center;
+  background-color: #fdbb00;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.login-form{
+  margin-top: 6em;
+  padding: 1.5em 4em;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 1px 1px 10px 1px #0000004f;
+
+}

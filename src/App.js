@@ -4,6 +4,8 @@ import SecondPage from "./components/SecondPage";
 import ThirdPage from "./components/ThirdPage";
 
 export default function App() {
+  const [currentComponent, setComponent] = useState('FirstPage')
+  
   function dynamicRendering() {
     if (currentComponent == 'FirstPage') {
       setComponent('SecondPage')
@@ -16,9 +18,8 @@ export default function App() {
     }
   }
 
-  const [currentComponent, setComponent] = useState('FirstPage')
   return (
-    <div>
+    <div className="login-form">
       <h1>Atena.io - Initial commit</h1>
 
       {currentComponent == 'FirstPage' ?
