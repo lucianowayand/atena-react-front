@@ -1,39 +1,12 @@
-import { useState } from "react";
-import FirstPage from "./components/FirstPage";
-import SecondPage from "./components/SecondPage";
-import ThirdPage from "./components/ThirdPage";
+import PageSorter from "./components/PageSorter";
+import { Paper } from "@mui/material";
 
 export default function App() {
-  const [currentComponent, setComponent] = useState('FirstPage')
-  
-  function dynamicRendering() {
-    if (currentComponent == 'FirstPage') {
-      setComponent('SecondPage')
-
-    } else if (currentComponent == 'SecondPage') {
-      setComponent('ThirdPage')
-    }
-    else if (currentComponent == 'ThirdPage') {
-      setComponent('FirstPage')
-    }
-  }
-
   return (
-    <div className="login-form">
-      <h1>Atena.io - Initial commit</h1>
-
-      {currentComponent == 'FirstPage' ?
-        <FirstPage/>
-        : null}
-      {currentComponent == 'SecondPage' ?
-        <SecondPage/>
-        : null}
-      {currentComponent == 'ThirdPage' ?
-        <ThirdPage/>
-        : null}
-
-      <button onClick={dynamicRendering}>Next</button>
-
-    </div>
+    <Paper elevation={3} className="login-form">
+      <h1>Atena.io - Login Form</h1>
+      <PageSorter/>
+    </Paper>
+      
   );
 }
