@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Box, Stepper, Step, StepLabel } from "@mui/material";
+import { Button, Stack, Stepper, Step, StepLabel } from "@mui/material";
 
 import FirstPage from "./views/FirstPage";
 import SecondPage from "./views/SecondPage";
@@ -28,13 +28,13 @@ export default function PageSorter(){
         <>
         <Stepper activeStep={activeStep}>
             <Step>
-                <StepLabel>FirstPage</StepLabel>
+                <StepLabel>Acesso</StepLabel>
             </Step>
             <Step>
-                <StepLabel>SecondPage</StepLabel>
+                <StepLabel>Dados Pessoais</StepLabel>
             </Step>
             <Step>
-                <StepLabel>ThirdPage</StepLabel>
+                <StepLabel>Endereço</StepLabel>
             </Step>
         </Stepper>
         <br/>
@@ -47,12 +47,12 @@ export default function PageSorter(){
         {currentComponent === 'ThirdPage' ?
             <ThirdPage/>
             : null}
-
-        <Box sx={{display:'flex', justifyContent:'flex-end'}}>
-            <Button onClick={previousStep} variant='contained'>Previous</Button>
-            <Button onClick={nextStep} variant='contained'>Next</Button>
+        <br/>
+        <Stack direction='row' justifyContent='space-around' spacing={64}>
+            <Button onClick={previousStep} variant='contained'>Voltar</Button>
+            <Button onClick={nextStep} variant='contained'>Próximo</Button>
             
-        </Box>
+        </Stack>
         
         </>
     )
