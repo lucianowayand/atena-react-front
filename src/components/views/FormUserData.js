@@ -1,6 +1,6 @@
 import { TextField, Stack } from "@mui/material"
 
-export default function FirstPage(){
+export default function FormUserData(){
 
     return (
         <div>

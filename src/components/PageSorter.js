@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Button, Stack, Stepper, Step, StepLabel } from "@mui/material";
 
-import FirstPage from "./views/FirstPage";
-import SecondPage from "./views/SecondPage";
-import ThirdPage from "./views/ThirdPage";
+import FirstPage from "./views/FormUserData";
+import SecondPage from "./views/FormPersonalData";
+import ThirdPage from "./views/FormAddress";
 
 export default function PageSorter(){
     const [currentComponent, setComponent] = useState('FirstPage')
