@@ -1,7 +1,9 @@
 import { Paper, TextField, Stack, Box, Button } from "@mui/material"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from 'react-router-dom'
 import { api } from "../services/api"
+import { setCookie } from "nookies"
+import { useNavigate } from "react-router-dom"
 
 export default function Login(){
     const [loginData, setLoginData] = useState({
@@ -14,9 +16,24 @@ export default function Login(){
         console.log(loginData)
     }
 
+    const { authenticated, setAuthenticated} = useState(false)
+
+    let navigate = useNavigate()
+
+    useEffect(()=>{
+        navigate('/cadastro')
+    }, [authenticated])
+
     function login() {
         api.post('/auth', loginData).then((res) => {
-            console.log(res)
+            let user = JSON.stringify(res.data.user)
+            setCookie(undefined, 'USER', user, {
+                path: '/',
+                maxAge: 60 * 60 * 24 * 7 // 7 days
+            })
+            console.log(user)
+            setAuthenticated(true)
+            
         }).catch((error) => {
             alert(error)
         })
