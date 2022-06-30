@@ -41,7 +41,7 @@ export default function Login() {
             <Box sx={{ mt: 4 }}>
                 <form>
                     <Stack spacing={3}>
-                        <TextField label='Email' name='email' onChange={handleChange('email')} required={true} />
+                        <TextField label='Email' name='email' type='email' onChange={handleChange('email')} required={true} />
                         <TextField label='Password' name='password' type='password' onChange={handleChange('password')} required={true} />
                     </Stack>
                     <Box sx={{ display: 'flex', justifyContent: 'space-evenly', mt: 6 }}>
