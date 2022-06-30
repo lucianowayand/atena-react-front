@@ -40,6 +40,7 @@ export default function PageSorter() {
             setComponent(componentList[activeStep - 1])
         }
     }
+    
     function register(){
         api.post('/user', userData).then((res)=>{
             console.log(res)
@@ -87,8 +88,6 @@ export default function PageSorter() {
                     <Button onClick={register} variant='contained'>Concluir</Button>
                 </Stack>
             }
-
-
         </>
     )
 }
