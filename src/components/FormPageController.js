@@ -1,4 +1,4 @@
-import { Button, Stack, Box } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import FormStepper from './FormStepper.js'
 
 import FirstPage from "./views/FormUserData";
