@@ -1,6 +1,6 @@
 import { Paper, TextField, Stack, Box, Button } from "@mui/material"
 import { useState } from "react"
-import { api } from "../services/api"
+import { api } from "../../services/api"
 import { setCookie } from "nookies"
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -12,7 +12,7 @@ export default function Login() {
 
     const handleChange = input => event => {
         setLoginData(prevLoginData => ({ ...prevLoginData, [input]: event.target.value }))
-        console.log(loginData)
+
     }
 
     let navigate = useNavigate()
@@ -25,7 +25,12 @@ export default function Login() {
                 maxAge: 60 * 60 * 24 * 7 // 7 days
             })
         }).then(() => {navigate('/dashboard')}).catch((error) => {
-            alert(error)
+            if(error.response.status === 401){
+                alert('Email or password are not valid!')
+            } else {
+                alert("Couldn't connect to the server")
+            }
+            
         })
     }
 

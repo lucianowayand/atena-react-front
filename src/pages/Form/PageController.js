@@ -1,9 +1,9 @@
 import { Button, Stack } from "@mui/material";
-import FormStepper from './FormStepper.js'
+import FormStepper from '../../components/Form/FormStepper.js'
 
-import FirstPage from "./views/FormUserData";
-import SecondPage from "./views/FormPersonalData";
-import ThirdPage from "./views/FormAddress";
+import FirstPage from "./pages/UserData";
+import SecondPage from "./pages/PersonalData";
+import ThirdPage from "./pages/Address";
 
 export default function FormPageController(props){
     return(

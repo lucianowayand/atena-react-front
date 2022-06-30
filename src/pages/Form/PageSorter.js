@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { api } from "../services/api.js";
+import { api } from "../../services/api.js";
 import { Paper } from "@mui/material";
 
-import FormSubmit from "./views/FormSubmit.js";
-import FormPageController from "./FormPageController.js";
+import FormSubmit from "./pages/Submit.js";
+import FormPageController from "./PageController.js";
 
 export default function PageSorter() {
     const componentList = ['FormUserData', 'FormPersonalData', 'FormAddress']
@@ -45,7 +45,6 @@ export default function PageSorter() {
             alert('One or more values are missing, please check again!')
         } else {
             api.post('/user', userData).then((res) => {
-                console.log(res)
                 setRegisterFinished(true)
             }).catch((error) => {
                 alert(error)
