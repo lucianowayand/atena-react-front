@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, Stack } from "@mui/material";
 import FormStepper from './FormStepper.js'
+import { api } from "../services/api.js";
 
 import FirstPage from "./views/FormUserData";
 import SecondPage from "./views/FormPersonalData";
@@ -37,20 +38,38 @@ export default function PageSorter() {
             setComponent(componentList[activeStep - 1])
         }
     }
+    function register(){
+        api.post('/user', userData).then((res)=>{
+            handleClick()
+        }).catch((error)=>{
+            console.log(error)
+        })
+
+    }
+
+    const [open, setOpen] = useState(false);
+
+    function handleClick(){
+        setOpen(true);
+    };
+
+    function handleClose(){
+        setOpen(false);
+    };
 
     const handleChange = input => event => {
         if(event.target.value !== ''){
             setUserData(prevUserData => ({...prevUserData, [input]: event.target.value}))
-            console.log(userData)
+
         } else {
             setUserData(prevUserData => ({...prevUserData, [input]: null}))
-            console.log(userData)
+
         }
         
     }
     const handleSwitch = input => event => {
         setUserData(prevUserData => ({...prevUserData, [input]: event.target.checked}))
-        console.log(userData)
+
     }
 
 
@@ -79,7 +98,7 @@ export default function PageSorter() {
                 :
                 <Stack direction='row' justifyContent='space-around' spacing={64}>
                     <Button onClick={previousStep} variant='contained'>Voltar</Button>
-                    <Button onClick={previousStep} variant='contained'>Concluir</Button>
+                    <Button onClick={register} variant='contained'>Concluir</Button>
                 </Stack>
             }
 
