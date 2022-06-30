@@ -26,7 +26,7 @@ export default function FormSubmit(props){
             <p>Clique em prosseguir para continuar ao login!</p>
             <br/>
             <Box sx={{display: 'flex', justifyContent:'flex-end'}}>
-                <Button variant='contained' onClick={()=>{navigate('/login')}}>prosseguir</Button>
+                <Button variant='contained' onClick={()=>{navigate('/')}}>prosseguir</Button>
             </Box>
                       
         </div>
