@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { api } from "../services/api.js";
-
+import { Paper } from "@mui/material";
 
 import FormSubmit from "./views/FormSubmit.js";
 import FormPageController from "./FormPageController.js";
@@ -68,7 +68,7 @@ export default function PageSorter() {
     }
 
     return (
-        <>
+        <Paper elevation={3} className="login-form">
             <h1>Atena.io - Register</h1>
             {registerFinished ?
                 <FormSubmit userData={userData} />
@@ -84,6 +84,6 @@ export default function PageSorter() {
                     register={register}
                 />
             }
-        </>
+        </Paper>
     )
 }

@@ -1,6 +1,9 @@
 import { Box, Stack, Button } from "@mui/material"
+import { useNavigate } from "react-router-dom"
 
 export default function FormSubmit(props){
+    let navigate = useNavigate()
+
     return(
         <div>
             <br/>
@@ -23,7 +26,7 @@ export default function FormSubmit(props){
             <p>Clique em prosseguir para continuar ao login!</p>
             <br/>
             <Box sx={{display: 'flex', justifyContent:'flex-end'}}>
-                <Button variant='contained' onClick={console.log('Clicxk')}>prosseguir</Button>
+                <Button variant='contained' onClick={()=>{navigate('/login')}}>prosseguir</Button>
             </Box>
                       
         </div>
