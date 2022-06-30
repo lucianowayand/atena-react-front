@@ -41,12 +41,17 @@ export default function PageSorter() {
     }
 
     function register() {
-        api.post('/user', userData).then((res) => {
-            console.log(res)
-            setRegisterFinished(true)
-        }).catch((error) => {
-            console.log(error)
-        })
+        if(Object.values(userData).includes('')){
+            alert('One or more values are missing, please check again!')
+        } else {
+            api.post('/user', userData).then((res) => {
+                console.log(res)
+                setRegisterFinished(true)
+            }).catch((error) => {
+                alert(error)
+            })
+        }
+        
 
     }
 
@@ -64,6 +69,7 @@ export default function PageSorter() {
 
     return (
         <>
+            <h1>Atena.io - Register</h1>
             {registerFinished ?
                 <FormSubmit userData={userData} />
                 :
