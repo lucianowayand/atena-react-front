@@ -8,6 +8,8 @@ import SecondPage from "./views/FormPersonalData";
 import ThirdPage from "./views/FormAddress";
 
 export default function PageSorter() {
+    const componentList = ['FormUserData', 'FormPersonalData', 'FormAddress']
+
     const [currentComponent, setComponent] = useState('FormUserData')
     const [activeStep, setActiveStep] = useState(0)
     const [userData, setUserData] = useState({
@@ -40,40 +42,24 @@ export default function PageSorter() {
     }
     function register(){
         api.post('/user', userData).then((res)=>{
-            handleClick()
+            console.log(res)
         }).catch((error)=>{
             console.log(error)
         })
 
     }
 
-    const [open, setOpen] = useState(false);
-
-    function handleClick(){
-        setOpen(true);
-    };
-
-    function handleClose(){
-        setOpen(false);
-    };
-
     const handleChange = input => event => {
         if(event.target.value !== ''){
             setUserData(prevUserData => ({...prevUserData, [input]: event.target.value}))
-
         } else {
             setUserData(prevUserData => ({...prevUserData, [input]: null}))
-
         }
-        
     }
     const handleSwitch = input => event => {
         setUserData(prevUserData => ({...prevUserData, [input]: event.target.checked}))
 
     }
-
-
-    const componentList = ['FormUserData', 'FormPersonalData', 'FormAddress']
 
     return (
         <>
