@@ -3,7 +3,7 @@ import { Stack, TextField, FormControlLabel, Switch } from "@mui/material"
 export default function FormPersonalData(props){
     return (
         <div>
-            <h3>Dados de acesso na plataforma:</h3>
+            <h3>Informações pessoais:</h3>
             <br/>
             <form>
                 <Stack spacing={3}>

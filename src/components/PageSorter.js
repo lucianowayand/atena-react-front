@@ -21,7 +21,8 @@ export default function PageSorter() {
         state: '',
         cep: '',
         fullAddress: '',
-        addressNumber: ''
+        addressNumber: '',
+        addressInfo: null
     })
 
     function nextStep() {
@@ -38,8 +39,14 @@ export default function PageSorter() {
     }
 
     const handleChange = input => event => {
-        setUserData(prevUserData => ({...prevUserData, [input]: event.target.value}))
-        console.log(userData)
+        if(event.target.value !== ''){
+            setUserData(prevUserData => ({...prevUserData, [input]: event.target.value}))
+            console.log(userData)
+        } else {
+            setUserData(prevUserData => ({...prevUserData, [input]: null}))
+            console.log(userData)
+        }
+        
     }
     const handleSwitch = input => event => {
         setUserData(prevUserData => ({...prevUserData, [input]: event.target.checked}))
