@@ -1,11 +1,11 @@
-import PageSorter from "./components/pages/PageSorter";
-import { Router } from "react-router-dom";
+import PageSorter from "./components/PageSorter";
+import { Paper } from "@mui/material";
 
 export default function App() {
   return (
-    <Router>
+    <Paper elevation={3} className="login-form">
       <PageSorter/>
-    </Router>
-
+    </Paper>
+      
   );
 }
