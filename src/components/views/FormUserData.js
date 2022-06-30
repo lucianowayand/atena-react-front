@@ -8,8 +8,8 @@ export default function FormUserData(props){
             <br/>
             <form>
                 <Stack spacing={3}>
-                    <TextField label='Email' name='email' onChange={props.handleChange('email')} required={true}/>
-                    <TextField label='Password' name='password' type='password' onChange={props.handleChange('password')} required={true}/>
+                    <TextField label='Email' name='email' defaultValue={props.user.email} onChange={props.handleChange('email')} required={true}/>
+                    <TextField label='Password' name='password' type='password' defaultValue={props.user.password} onChange={props.handleChange('password')} required={true}/>
                 </Stack>
             </form>
             <br/>
