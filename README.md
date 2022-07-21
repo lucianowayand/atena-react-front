@@ -1,4 +1,4 @@
-# Desafio de admissão - Atena.io
+# Desafio de admissão - Fullstack
 
 Repositório relacionado ao frontend, feito em `React`
 
